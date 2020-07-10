@@ -1,5 +1,5 @@
 // Este codigo deberia servir para compilar un .exe que permita ingresar datos por consola y imprimirlos en "Paises.txt" y "ParteDiario.txt" 
-
+// El codigo no tiene ningun tipo de proteccion contra errores.
 
 #include <iostream>
 #include <string>
@@ -96,7 +96,7 @@ void PrintFile(std::fstream& file,const std::string& buffer, PARAMETROS type)	//
 			//file << buffer;
 			break;
 		case 3:
-			file << CalculateSpaces(buffer, type) + buffer + " ";
+			file << buffer + " ";
 			file.flush();
 			//file << buffer;
 			break;
