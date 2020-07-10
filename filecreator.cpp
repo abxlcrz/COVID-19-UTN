@@ -1,11 +1,5 @@
 // Este codigo deberia servir para compilar un .exe que permita ingresar datos por consola y imprimirlos en "Paises.txt" y "ParteDiario.txt" 
 
-////////////////////////////
-///
-///NOTAS: El codigo no tiene deteccion de errores. si escriben por ejemplo, un pais de 22 caracteres el programa lo inserta en el archivo.
-///
-///////////////////////////
-
 #include <iostream>
 #include <string>
 #include<fstream>
@@ -81,6 +75,46 @@ std::string CalculateSpaces(const std::string& buffer, PARAMETROS type) // Funci
 
 
 
+bool SizeErrorHandle(const std::string& buffer, PARAMETROS type)
+{
+	switch(type)
+	{
+		case 0:
+			if(buffer.size() <= SIZE_NOMBRE)
+				return true;
+			break;
+		case 1:
+			if(buffer.size() <= SIZE_CONTINENTE)
+				return true;
+			break;
+		case 2:
+			if(buffer.size() <= SIZE_HABITANTES)
+				return true;
+			break;
+		case 3:
+			if(buffer.size() <= SIZE_FECHA)
+				return true;
+			break;
+		case 4:
+			if(buffer.size() <= SIZE_CANTIDAD)
+				return true;
+			break;
+	}
+
+	return false;	// si buffer ocupa mas que  el espacio asignado retorna falso
+}
+
+void AskForData(const std::string ask, std::string& buffer, PARAMETROS type)
+{
+	do
+	{
+		std::cout << ask;
+		std::cin >> buffer;
+	}while(!SizeErrorHandle(buffer, type));
+} // pide informacion al usuario hasta que se ingrese correctamente
+
+
+
 void PrintFile(std::fstream& file,const std::string& buffer, PARAMETROS type)	// Funcion para imprimir en un archivo, utiliza un parametro para 
 {										// seleccionar la forma de imprimir datos
 	switch(type)
@@ -117,60 +151,76 @@ void PrintFile(std::fstream& file,const std::string& buffer, PARAMETROS type)	//
 } // Hay mucho codigo redundante aca
 
 
-void ImprimirPais()		// pide datos al usuario por consola, los almacena en un string, luego los pasa a la funcion PrintFile().
+void ImprimirPais()
 {
 	OpenFile(file, "Paises.txt");
 	std::string buffer;
 
-	std::cout << "Ingrese el nombre del pais: ";
-	std::cin >> buffer;
+	AskForData("Ingrese el nombre del pais: ", buffer, NOMBRE);
+	//std::cout << "Ingrese el nombre del pais: ";
+	//std::cin >> buffer;
 	PrintFile(file, buffer, NOMBRE);
 
-	std::cout << "Ingrese el continente del pais: ";
-	std::cin >> buffer;
+	AskForData("Ingrese el continente del pais: ", buffer, CONTINENTE);
+	//std::cout << "Ingrese el continente del pais: ";
+	//std::cin >> buffer;
 	PrintFile(file, buffer, CONTINENTE);
 
-	std::cout << "Ingrese la cantidad de habitantes del pais: ";
-	std::cin >> buffer;
+	AskForData("Ingrese la cantidad de habitantes del pais: ", buffer, HABITANTES);
+	//std::cout << "Ingrese la cantidad de habitantes del pais: ";
+	//std::cin >> buffer;
 	PrintFile(file, buffer, HABITANTES);
+
+	buffer.clear();
+	file.flush();
 
 	file << '\n';
 
 	CloseFile(file);
 }
 
-void ImprimirParte() 		// idem ImprimirPais() solo que para el formato del ParteDiario.txt
+void ImprimirParte()
 {
 	OpenFile(file, "ParteDiario.txt");
 	std::string buffer;
 
-	std::cout << "Ingrese el nombre del pais: ";
-	std::cin >> buffer;
+	AskForData("Ingrese el nombre del pais: ", buffer, NOMBRE);
+	//std::cout << "Ingrese el nombre del pais: ";
+	//std::cin >> buffer;
 	PrintFile(file, buffer, NOMBRE);
 
-	std::cout << "Ingrese el mes: ";
-	std::cin >> buffer;
+	AskForData("Ingrese el mes: ", buffer, FECHA);
+	//std::cout << "Ingrese el mes: ";
+	//std::cin >> buffer;
 	PrintFile(file, buffer, FECHA);
 
-	std::cout << "Ingrese el dia: ";
-	std::cin >> buffer;
+	AskForData("Ingrese el dia: ", buffer, FECHA);
+	//std::cout << "Ingrese el dia: ";
+	//std::cin >> buffer;
 	PrintFile(file, buffer, FECHA);
 
-	std::cout << "Ingrese la cantidad de hisopados: ";
-	std::cin >> buffer;
+	AskForData("Ingrese la cantidad de hisopados: ", buffer, CANTIDAD);
+	//std::cout << "Ingrese la cantidad de hisopados: ";
+	//std::cin >> buffer;
 	PrintFile(file, buffer, CANTIDAD);
 
-	std::cout << "Ingrese la cantidad de infectados: ";
-	std::cin >> buffer;
+	AskForData("Ingrese la cantidad de infectados: ", buffer, CANTIDAD);
+	//std::cout << "Ingrese la cantidad de infectados: ";
+	//std::cin >> buffer;
 	PrintFile(file, buffer, CANTIDAD);
 
-	std::cout << "Ingrese la cantidad de recuperados: ";
-	std::cin >> buffer;
+	AskForData("Ingrese la cantidad de recuperados: ", buffer, CANTIDAD);
+	//std::cout << "Ingrese la cantidad de recuperados: ";
+	//std::cin >> buffer;
 	PrintFile(file, buffer, CANTIDAD);
 
-	std::cout << "Ingrese la cantidad de fallecidos: ";
-	std::cin >> buffer;
+	AskForData("Ingrese la cantidad de fallecidos: ", buffer, CANTIDAD);
+	//std::cout << "Ingrese la cantidad de fallecidos: ";
+	//std::cin >> buffer;
 	PrintFile(file, buffer, CANTIDAD);
+
+	buffer.clear();
+	file.flush();
 
 	file << '\n';
 
