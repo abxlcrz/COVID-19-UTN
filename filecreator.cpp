@@ -1,5 +1,10 @@
 // Este codigo deberia servir para compilar un .exe que permita ingresar datos por consola y imprimirlos en "Paises.txt" y "ParteDiario.txt" 
-// El codigo no tiene ningun tipo de proteccion contra errores.
+
+////////////////////////////
+///
+///NOTAS: El codigo no tiene deteccion de errores. si escriben por ejemplo, un pais de 22 caracteres el programa lo inserta en el archivo.
+///
+///////////////////////////
 
 #include <iostream>
 #include <string>
@@ -110,13 +115,6 @@ void PrintFile(std::fstream& file,const std::string& buffer, PARAMETROS type)	//
 			break;
 	}
 } // Hay mucho codigo redundante aca
-
-
-////////////////////////////
-///
-///NOTAS: Falta agregar un espacio entre cada cadena de texto
-///
-///////////////////////////
 
 
 void ImprimirPais()
