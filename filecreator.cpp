@@ -2,6 +2,9 @@
 #include <string>
 #include<fstream>
 
+// Stream de archivo global
+std::fstream file;
+
 enum PARAMETROS
 {
 	NOMBRE,
@@ -9,18 +12,15 @@ enum PARAMETROS
 	HABITANTES
 };
 
-void OpenFile(std::string nameFile, std::fstream& file) 	// Funcion para abrir un archivo 
+void OpenFile(std::fstream& file, std::string nameFile) 	// Funcion para abrir un archivo 
 {
 	 file.open(nameFile, std::fstream::out | std::fstream::app);
 
-	 if(file.is_open())
+	 if(!file.is_open())
 	 {
-	 	std::cout << "Archivo abierto exitosamente.\n\n";
+	 	std::cout << "Error.\n\n";
 	 }
-	 else
-	 {
-	 	std::cout << "No se pudo abrir el archivo.\n\n";
-	 }
+	 
 }
 
 void CloseFile(std::fstream& file)	// Funcion para verrar un archivo
@@ -87,8 +87,26 @@ void PrintFile(std::fstream& file,const std::string& buffer, PARAMETROS type)	//
 ///////////////////////////
 
 
+void ImprimirPais()
+{
+	OpenFile(file, "paises.txt");
+	std::string buffer;
+
+	std::cout << "Ingrese el nombre del pais: ";
+	std::cin >> buffer;
+	PrintFile(file, buffer, NOMBRE);
+
+	std::cout << "Ingrese el continente del pais: ";
+	std::cin >> buffer;
+	PrintFile(file, buffer, CONTINENTE);
+
+	std::cout << "Ingrese la cantidad de habitantes del pais: ";
+	std::cin >> buffer;
+	PrintFile(file, buffer, HABITANTES);
 
 
+	CloseFile(file);
+}
 
 
 
@@ -96,19 +114,30 @@ void PrintFile(std::fstream& file,const std::string& buffer, PARAMETROS type)	//
 
 int main()
 {
-	std::fstream file;
-	OpenFile("paises.txt", file);
+	int key;
+
+	do
+	{
+		std::cout << "0 -\tCerrar programa.\n";
+		std::cout << "1 -\tIngresar datos de pais.\n";
+		std::cout << "\nPor favor elija una opcion: ";
+
+		std::cin >> key;
+
+		switch(key)
+		{
+			case 0:
+				break;
+			case 1:
+				ImprimirPais();
+				break;
+		}
+
+	}while(key != 0 || key < 0 || key > 1);
+
+
 	
-
-	std::string nombre = "Argentina";
-	std::string continente = "America";
-	std::string habitantes = "400";
-
-	PrintFile(file, nombre, NOMBRE);
-	PrintFile(file, continente, CONTINENTE);
-	PrintFile(file, habitantes, HABITANTES);
-
-	CloseFile(file);
 	
 	return 0;
 }
+
