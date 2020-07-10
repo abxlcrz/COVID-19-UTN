@@ -28,7 +28,7 @@ void CloseFile(std::fstream& file)	// Funcion para verrar un archivo
 	file.close();
 }
 
-std::string CalculateSpaces(const std::string& buffer, PARAMETROS type) // Funcion para calcular la cantidad de espacios que sobran, devuelve un string con espacios vacios
+std::string CalculateSpaces(const std::string& buffer, PARAMETROS type) // Funcion para calcular la cantidad de espacios que sobran, devuelve un string con espacios
 {
 	int spaces;
 	std::string strSpaces;
@@ -62,26 +62,29 @@ void PrintFile(std::fstream& file,const std::string& buffer, PARAMETROS type)	//
 	switch(type)
 	{
 		case 0:
-			file << buffer;
+			file << buffer + CalculateSpaces(buffer, type);
 			file.flush();
-			file << CalculateSpaces(buffer, type);
+			//file << CalculateSpaces(buffer, type);
 			break;
 		case 1:
-			file << buffer;
+			file << buffer + CalculateSpaces(buffer, type);
 			file.flush();
-			file << CalculateSpaces(buffer, type);
+			//file << CalculateSpaces(buffer, type);
 			break;
 		case 2:
-			file << CalculateSpaces(buffer, type);
+			file << CalculateSpaces(buffer, type) + buffer;
 			file.flush();
-			file << buffer;
+			//file << buffer;
 			break;
 	}
 }
 
 
-
-
+////////////////////////////
+///
+///NOTAS: Falta agregar un espacio entre cada cadena de texto
+///
+///////////////////////////
 
 
 
