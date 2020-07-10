@@ -21,7 +21,7 @@
 // Stream de archivo global
 std::fstream file;
 
-enum PARAMETROS
+enum PARAMETROS		// lista enumerada de 0 hasta 4, se utiliza en los switches.
 {
 	NOMBRE,
 	CONTINENTE,
@@ -81,8 +81,8 @@ std::string CalculateSpaces(const std::string& buffer, PARAMETROS type) // Funci
 
 
 
-void PrintFile(std::fstream& file,const std::string& buffer, PARAMETROS type)	// Funcion para imprimir en un archivo
-{
+void PrintFile(std::fstream& file,const std::string& buffer, PARAMETROS type)	// Funcion para imprimir en un archivo, utiliza un parametro para 
+{										// seleccionar la forma de imprimir datos
 	switch(type)
 	{
 		case 0:
@@ -117,7 +117,7 @@ void PrintFile(std::fstream& file,const std::string& buffer, PARAMETROS type)	//
 } // Hay mucho codigo redundante aca
 
 
-void ImprimirPais()
+void ImprimirPais()		// pide datos al usuario por consola, los almacena en un string, luego los pasa a la funcion PrintFile().
 {
 	OpenFile(file, "Paises.txt");
 	std::string buffer;
@@ -139,7 +139,7 @@ void ImprimirPais()
 	CloseFile(file);
 }
 
-void ImprimirParte()
+void ImprimirParte() 		// idem ImprimirPais() solo que para el formato del ParteDiario.txt
 {
 	OpenFile(file, "ParteDiario.txt");
 	std::string buffer;
@@ -183,7 +183,7 @@ int main()
 {
 	int key;
 	
-	do
+	do			// ciclo principal del programa. despliega un menu, el cual no termina hasta el usuario elija la opcion "0"
 	{
 		std::cout << "\n\n0 -\tCerrar programa.\n";
 		std::cout << "1 -\tIngresar datos de pais.\n";
