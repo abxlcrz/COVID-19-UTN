@@ -5,12 +5,12 @@
 #include <string>
 #include<fstream>
 
-// #define variables para funcion "std::string CalculateSpaces(const std::string& buffer, PARAMETROS type)"
-#define SIZE_NOMBRE = 20
-#define SIZE_CONTINENTE = 10
-#define SIZE_HABITANTES = 9
-#define SIZE_FECHA = 9
-#define SIZE_CANTIDAD = 9
+// #define
+#define SIZE_NOMBRE 20
+#define SIZE_CONTINENTE 10
+#define SIZE_HABITANTES 9
+#define SIZE_FECHA 9
+#define SIZE_CANTIDAD 9
 
 
 // Stream de archivo global
@@ -110,6 +110,12 @@ void PrintFile(std::fstream& file,const std::string& buffer, PARAMETROS type)	//
 } // Hay mucho codigo redundante aca
 
 
+////////////////////////////
+///
+///NOTAS: Falta agregar un espacio entre cada cadena de texto
+///
+///////////////////////////
+
 
 void ImprimirPais()
 {
@@ -195,7 +201,7 @@ int main()
 				ImprimirPais();
 				break;
 			case 2:
-				ImprimirParte()
+				ImprimirParte();
 				break;
 		}
 
