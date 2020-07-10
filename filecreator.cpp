@@ -94,10 +94,12 @@ void PrintFile(std::fstream& file,const std::string& buffer, PARAMETROS type)	//
 			file << CalculateSpaces(buffer, type) + buffer + " ";
 			file.flush();
 			//file << buffer;
+			break;
 		case 3:
 			file << CalculateSpaces(buffer, type) + buffer + " ";
 			file.flush();
 			//file << buffer;
+			break;
 		case 4:
 			file << CalculateSpaces(buffer, type) + buffer + " ";
 			file.flush();
