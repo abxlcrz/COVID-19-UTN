@@ -62,29 +62,23 @@ void PrintFile(std::fstream& file,const std::string& buffer, PARAMETROS type)	//
 	switch(type)
 	{
 		case 0:
-			file << buffer + CalculateSpaces(buffer, type);
+			file << buffer + CalculateSpaces(buffer, type) + " ";
 			file.flush();
 			//file << CalculateSpaces(buffer, type);
 			break;
 		case 1:
-			file << buffer + CalculateSpaces(buffer, type);
+			file << buffer + CalculateSpaces(buffer, type) + " ";
 			file.flush();
 			//file << CalculateSpaces(buffer, type);
 			break;
 		case 2:
-			file << CalculateSpaces(buffer, type) + buffer;
+			file << CalculateSpaces(buffer, type) + buffer + '\n';
 			file.flush();
 			//file << buffer;
 			break;
 	}
 }
 
-
-////////////////////////////
-///
-///NOTAS: Falta agregar un espacio entre cada cadena de texto
-///
-///////////////////////////
 
 
 void ImprimirPais()
