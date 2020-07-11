@@ -157,18 +157,12 @@ void ImprimirPais()
 	std::string buffer;
 
 	AskForData("Ingrese el nombre del pais: ", buffer, NOMBRE);
-	//std::cout << "Ingrese el nombre del pais: ";
-	//std::cin >> buffer;
 	PrintFile(file, buffer, NOMBRE);
 
 	AskForData("Ingrese el continente del pais: ", buffer, CONTINENTE);
-	//std::cout << "Ingrese el continente del pais: ";
-	//std::cin >> buffer;
 	PrintFile(file, buffer, CONTINENTE);
 
 	AskForData("Ingrese la cantidad de habitantes del pais: ", buffer, HABITANTES);
-	//std::cout << "Ingrese la cantidad de habitantes del pais: ";
-	//std::cin >> buffer;
 	PrintFile(file, buffer, HABITANTES);
 
 	buffer.clear();
@@ -185,38 +179,24 @@ void ImprimirParte()
 	std::string buffer;
 
 	AskForData("Ingrese el nombre del pais: ", buffer, NOMBRE);
-	//std::cout << "Ingrese el nombre del pais: ";
-	//std::cin >> buffer;
 	PrintFile(file, buffer, NOMBRE);
 
 	AskForData("Ingrese el mes: ", buffer, FECHA);
-	//std::cout << "Ingrese el mes: ";
-	//std::cin >> buffer;
 	PrintFile(file, buffer, FECHA);
 
 	AskForData("Ingrese el dia: ", buffer, FECHA);
-	//std::cout << "Ingrese el dia: ";
-	//std::cin >> buffer;
 	PrintFile(file, buffer, FECHA);
 
 	AskForData("Ingrese la cantidad de hisopados: ", buffer, CANTIDAD);
-	//std::cout << "Ingrese la cantidad de hisopados: ";
-	//std::cin >> buffer;
 	PrintFile(file, buffer, CANTIDAD);
 
 	AskForData("Ingrese la cantidad de infectados: ", buffer, CANTIDAD);
-	//std::cout << "Ingrese la cantidad de infectados: ";
-	//std::cin >> buffer;
 	PrintFile(file, buffer, CANTIDAD);
 
 	AskForData("Ingrese la cantidad de recuperados: ", buffer, CANTIDAD);
-	//std::cout << "Ingrese la cantidad de recuperados: ";
-	//std::cin >> buffer;
 	PrintFile(file, buffer, CANTIDAD);
 
 	AskForData("Ingrese la cantidad de fallecidos: ", buffer, CANTIDAD);
-	//std::cout << "Ingrese la cantidad de fallecidos: ";
-	//std::cin >> buffer;
 	PrintFile(file, buffer, CANTIDAD);
 
 	buffer.clear();
