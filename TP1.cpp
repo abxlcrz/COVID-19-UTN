@@ -12,11 +12,9 @@ using namespace std;
 typedef unsigned int uint;
 typedef unsigned short ushort;
 typedef char str20[21];
-typedef char str10[11];
 
 struct Pais{
     str20 Nombre;
-    str10 Continente;
     uint Habitantes;
 };
 
@@ -61,10 +59,8 @@ int binarySearch(int array[], int right, int item){
 bool readFileCountries(ifstream &fileCountry, Pais &p){
     
     fileCountry.get(p.Nombre, sizeof(p.Nombre));
-    fileCountry.ignore();
-    fileCountry.get(p.Continente, sizeof(p.Continente));
+    fileCountry.ignore(10);
     fileCountry >> p.Habitantes;
-    cout<<boolalpha<<fileCountry.good();
     return fileCountry.good();
 }
 // int loadArray(Pais array[],Pais pais){
@@ -83,7 +79,6 @@ int main(){
     Pais tpais;
     while(readFileCountries(countries, tpais)){
         cout << tpais.Nombre;
-        cout << tpais.Continente;
         cout << tpais.Habitantes << endl;
     }
     countries.close();
