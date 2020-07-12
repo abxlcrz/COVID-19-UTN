@@ -25,7 +25,7 @@ void Shellsort(PARAM param, int size)
             temp = partes[k];
             i = k;
 
-            while(i > seq - 1 && *(&partes[i - seq].hisopados + param) >= *(&temp.hisopados + param))
+            while(i > seq - 1 && *(&partes[i - seq].hisopados + param) <= *(&temp.hisopados + param))
             {
                 partes[i] = partes[i - seq];
                 i -= seq;
