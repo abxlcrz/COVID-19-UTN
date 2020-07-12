@@ -1,8 +1,5 @@
 enum PARAM
 {
-    NOMBRE = 10,
-    MES = 0,
-    DIA,
     HISOPADOS,
     INFECTADOS,
     RECUPERADOS,
@@ -28,7 +25,7 @@ void Shellsort(PARAM param, int size)
             temp = partes[k];
             i = k;
 
-            while(i > seq - 1 && *(&partes[i - seq].mes + param) >= *(&temp.mes + param))
+            while(i > seq - 1 && *(&partes[i - seq].hisopados + param) >= *(&temp.hisopados + param))
             {
                 partes[i] = partes[i - seq];
                 i -= seq;
