@@ -1,11 +1,3 @@
-enum PARAM
-{
-    HISOPADOS,
-    INFECTADOS,
-    RECUPERADOS,
-    FALLECIDOS
-};
-
 void Shellsort(PARAM param, int size)
 {
     PARTE temp;
