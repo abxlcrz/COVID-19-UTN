@@ -36,3 +36,23 @@ void InsertarEnOrden(PARTE& temp, int size, PARTE partes[])
 
     partes[i] = temp;
 }
+
+template<typename T>
+void InsertarEnOrden(T& temp, int size, T array[])
+{
+    int i = 0;
+
+    for(; i < size; i++)
+    {
+        if(strcmp(temp.nombre, array[i].nombre) > 0)
+            break;
+    }
+    int k = size;
+
+    for(; i < k; k--)
+    {
+        Intercambiar(array[k], array[k - 1]);
+    }
+
+    array[i] = temp;
+}
