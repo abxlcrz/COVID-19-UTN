@@ -1,6 +1,7 @@
 #include <fstream.h>
 #include <iostream.h>
 #include <cstring.h>
+#include <cassert.h>
 
 
 #include "encabezados.h"
@@ -16,6 +17,13 @@
 
 int main()
 {
+	AbrirArchivo("Paises.txt", file);
+	ProcesarPaises();
+	CerrarArchivo(file);
 
-  return 0;
+	AbrirArchivo("ParteDiario.txt", file);
+	ProcesarParte();
+	CerrarArchivo(file);
+
+ 	return 0;
 }

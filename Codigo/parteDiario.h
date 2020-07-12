@@ -7,7 +7,7 @@ bool LeerParteDiario(PARTE& temp)
     file >> temp.dia;
     file >> temp.hisopados;
     file >> temp.infectados;
-    file >> temp.recuperadados;
+    file >> temp.recuperados;
     file >> temp.fallecidos;
 
     return file.good();
@@ -21,6 +21,6 @@ void ProcesarParte()
 
     while(LeerParteDiario(temp))
     {
-        ImprimirParte(temp);
+        InsertarEnOrden(temp, counter, partes);
     };
 }

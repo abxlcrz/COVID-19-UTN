@@ -17,7 +17,7 @@ struct PARTE
     ushort dia;
     ushort hisopados;
     ushort infectados;
-    ushort recuperdados;
+    ushort recuperados;
     ushort fallecidos;
 };
 
@@ -28,3 +28,7 @@ enum PARAM
     RECUPERADOS,
     FALLECIDOS
 };
+
+PAIS paises[MAX_PAISES];
+PARTE partes[MAX_PAISES * 12];
+fstream file;
