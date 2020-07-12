@@ -88,3 +88,21 @@ int main(){
     }
     countries.close();
 }
+
+
+//////////////////////////////
+bool LeerPais(PAIS& pais)
+{
+    char pBuffer[21];
+    char cBuffer[11];
+
+    file.get(pBuffer, 21);
+    file.get(cBuffer, 11);
+
+    strcpy(pais.nombre, pBuffer);
+    strcpy(pais.continente, cBuffer);
+    file >> pais.habitantes;
+
+    return file.good();
+}
+
