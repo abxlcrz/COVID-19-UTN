@@ -2,6 +2,7 @@ bool LeerPaises(PAIS& temp)
 {
     assert(file.is_open());
 
+
     file >> temp.nombre;
     file >> temp.continente;
     file >> temp.habitantes;
@@ -14,11 +15,14 @@ void ProcesarPaises()   // funcion incompleta
 {
     int counter = 0;
     PAIS temp;
-    
-    while(LeerPaises())
+
+
+    while(LeerPaises(temp))
     {
-        paises[counter] = temp;
+        InsertarEnOrden(temp, counter, paises);
 
         counter++;
     };
+
+    strcpy(paises[counter].nombre, "stop");
 }
