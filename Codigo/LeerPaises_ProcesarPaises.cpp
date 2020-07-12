@@ -1,4 +1,4 @@
-bool LeerPaises()
+bool LeerPaises(PAIS& temp)
 {
     assert(file.is_open());
 
@@ -13,7 +13,8 @@ bool LeerPaises()
 void ProcesarPaises()   // funcion incompleta
 {
     int counter = 0;
-
+    PAIS temp;
+    
     while(LeerPaises())
     {
         strcpy(paises[counter].nombre, temp.nombre);
