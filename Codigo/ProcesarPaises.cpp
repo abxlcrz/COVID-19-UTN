@@ -71,9 +71,7 @@ void ProcesarPaises()
 
     while(LeerPaises())
     {
-        strcpy(paises[counter].nombre, temp.nombre);
-        strcpy(paises[counter].continente, temp.continente);
-        paises[counter].habitantes = temp.habitantes;
+        paises[counter] = temp;
 
         //ImprimirPais(paises[counter]);
         counter++;
