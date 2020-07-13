@@ -61,7 +61,19 @@ bool readFileCountries(ifstream &fileCountry, Pais &p){
     fileCountry.get(p.Nombre, sizeof(p.Nombre));
     fileCountry.ignore(10);
     fileCountry >> p.Habitantes;
+    fileCountry.ignore();
     return fileCountry.good();
+}
+
+bool readFileDailyPart(ifstream &dailyPart, ParteDiario &p){
+    
+    dailyPart.get(p.Nombre, sizeof(p.Nombre));
+    dailyPart >> p.Mes;
+    dailyPart >> p.CantHisopados;
+    dailyPart >> p.CantInfectados;
+    dailyPart >> p.CantRecuperados;
+    dailyPart >> p.CantFallecidos;
+    return dailyPart.good();
 }
 // int loadArray(Pais array[],Pais pais){
 //     static int i=0;
@@ -73,13 +85,13 @@ bool readFileCountries(ifstream &fileCountry, Pais &p){
 
 int main(){
     ifstream countries;
-    countries.open("Paises.txt");
-    //ifstream report(PART_DIA);
+    countries.open(PAISES);
+    ifstream report(PART_DIA);
     ofstream exit("exit.txt");
     Pais tpais;
     while(readFileCountries(countries, tpais)){
-        cout << tpais.Nombre;
-        cout << tpais.Habitantes << endl;
+        exit << tpais.Nombre;
+        exit << tpais.Habitantes << endl;
     }
     countries.close();
 }
