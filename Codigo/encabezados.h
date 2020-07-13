@@ -6,7 +6,6 @@ typedef unsigned short ushort;
 struct PAIS
 {
     char nombre[21];
-    char continente[11];
     uint habitantes;
 };
 
@@ -14,7 +13,6 @@ struct PARTE
 {
     char nombre[21];
     ushort mes;
-    ushort dia;
     ushort hisopados;
     ushort infectados;
     ushort recuperados;
@@ -32,3 +30,5 @@ enum PARAM
 PAIS paises[MAX_PAISES];
 PARTE partes[MAX_PAISES * 12];
 fstream file;
+ushort numberPaises = 0;
+ushort numberPartes = 0;

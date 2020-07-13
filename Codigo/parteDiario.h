@@ -27,64 +27,53 @@ void ProcesarParte()
     };
     numberPartes = counter;
 
-
+    PARTE vacio = { "", 0, 0, 0, 0, 0 };
     PARTE anual[12];
     ushort i = 0;
     ushort k;
-    bool key =  false;
+    bool key = false;
+
+    for(ushort iter = 0; iter < 12; iter++)
+        anual[iter] = vacio;
+
     do
     {
         k = partes[i].mes;
 
-        if(i == 0)
+        if(key)
         {
-            for(ushort iter = 0; iter < 12; iter++)
-            {
-                anual[iter].mes =  0;
-                anual[iter].hisopados = 0;
-                anual[iter].infectados = 0;
-                anual[iter].recuperados = 0;
-                anual[iter].fallecidos = 0;
-            }
-        }
-
-        if(strcmp(partes[i].nombre, partes[i - 1].nombre) != 0 && key)
-        {
-            // registrar los datos de los partes en anual
-            // no registrar los que tengan mes igual a 0
-            // reiniciar anual[12]
+            cout << "Diferente\n";
+            cout << "Imprimir datos actuales:\n";
 
             for(ushort iter = 0; iter < 12; iter++)
             {
-                if(anual[iter].mes  != 0)
+                if(anual[iter].mes != 0)
                 {
-                    cout << "Nombre: " << anual[iter].nombre << "\n";
+                    cout << "Nombre de pais: " << anual[iter].nombre << "\n";
                     cout << "Mes: " << anual[iter].mes << "\n";
-                    cout << "Cantidad hisopados: "  << anual[iter].hisopados << "\n";
-                    cout << "Cantidad infectados: "  << anual[iter].infectados << "\n";
-                    cout << "Cantidad recuperados: "  << anual[iter].recuperados << "\n";
-                    cout << "Cantidad fallecidos: "  << anual[iter].fallecidos << "\n";
+                    cout << "Hisopados: " << anual[iter].hisopados << "\n";
+                    cout << "Infectados: " << anual[iter].infectados << "\n";
+                    cout << "Recuperados: " << anual[iter].recuperados << "\n";
+                    cout << "Fallecidos: " << anual[iter].fallecidos << "\n\n";
 
-                    anual[iter].mes = 0;
-                    anual[iter].hisopados = 0;
-                    anual[iter].infectados = 0;
-                    anual[iter].recuperados = 0;
-                    anual[iter].fallecidos = 0;
+                    anual[iter] = vacio;
                 }
             }
-            key = false;
         }
-
+        else
+        {
+            cout << "Igual\n";
+        }
         strcpy(anual[k].nombre, partes[i].nombre);
-
-        anual[k].mes = k;
+        anual[k].mes = partes[i].mes;
         anual[k].hisopados += partes[i].hisopados;
         anual[k].infectados += partes[i].infectados;
         anual[k].recuperados += partes[i].recuperados;
         anual[k].fallecidos += partes[i].fallecidos;
 
+        key = !(strcmp(partes[i].nombre, partes[i + 1].nombre) == 0);
         i++;
-        key = true;
+    }while(i < counter + 1);
 
-    }while(i < counter);
+
 }

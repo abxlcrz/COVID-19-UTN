@@ -5,7 +5,7 @@ void InsertarEnOrden(T& temp, int size, T array[])  // sirve tanto para Paises c
 
     for(; i < size; i++)
     {
-        if(strcmp(temp.nombre, array[i].nombre) > 0)
+        if(strcmp(temp.nombre, array[i].nombre) < 0)
             break;
     }
     int k = size;
