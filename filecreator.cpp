@@ -9,7 +9,7 @@
 #define SIZE_CONTINENTE 10
 #define SIZE_HABITANTES 9
 #define SIZE_FECHA 9
-#define SIZE_CANTIDAD 9
+#define SIZE_CANTIDAD 6
 
 
 // Stream de archivo global
