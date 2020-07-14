@@ -30,15 +30,16 @@ void ImprimirPartes(PARTE p[])
     }
 }
 
+
+
 int main()
 {
 	AbrirArchivo("ParteDiario.txt", file);
-	//ProcesarPaises();
 	ProcesarParte();
 	CerrarArchivo(file);
 
+	cout << "\n\\n\n";
 
-	ImprimirPartes(partes);
-    //ImprimirPaises(paises);
+    ImprimirPartes(partes);
  	return 0;
 }

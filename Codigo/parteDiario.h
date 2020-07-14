@@ -29,51 +29,65 @@ void ProcesarParte()
 
     PARTE vacio = { "", 0, 0, 0, 0, 0 };
     PARTE anual[12];
-    ushort i = 0;
+    ushort iter = 0;
+    ushort newSize = 0;
     ushort k;
     bool key = false;
 
-    for(ushort iter = 0; iter < 12; iter++)
-        anual[iter] = vacio;
+    for(ushort i = 0; i < 12; i++)
+        anual[i] = vacio;
 
     do
     {
-        k = partes[i].mes;
+        k = partes[iter].mes;
 
         if(key)
         {
-            cout << "Diferente\n";
-            cout << "Imprimir datos actuales:\n";
-
-            for(ushort iter = 0; iter < 12; iter++)
+            //cout << "Diferente\n";
+            //cout << "Imprimir datos actuales:\n";
+            /*
+            for(int i = newSize; i < i; i++)
             {
-                if(anual[iter].mes != 0)
+                partes[i] = vacio;
+            }
+            */
+            for(ushort i = 0; i < 12; i++)
+            {
+                if(anual[i].mes != 0)               // utilizar solo anuales no vacios
                 {
-                    cout << "Nombre de pais: " << anual[iter].nombre << "\n";
-                    cout << "Mes: " << anual[iter].mes << "\n";
-                    cout << "Hisopados: " << anual[iter].hisopados << "\n";
-                    cout << "Infectados: " << anual[iter].infectados << "\n";
-                    cout << "Recuperados: " << anual[iter].recuperados << "\n";
-                    cout << "Fallecidos: " << anual[iter].fallecidos << "\n\n";
-
-                    anual[iter] = vacio;
+                    /*
+                    cout << "Nombre de pais: " << anual[i].nombre << "\n";
+                    cout << "Mes: " << anual[i].mes << "\n";
+                    cout << "Hisopados: " << anual[i].hisopados << "\n";
+                    cout << "Infectados: " << anual[i].infectados << "\n";
+                    cout << "Recuperados: " << anual[i].recuperados << "\n";
+                    cout << "Fallecidos: " << anual[i].fallecidos << "\n\n";
+                    */
+                    partes[newSize] = anual[i];     // remplaza el partes[newSize] por el anual[i]
+                    newSize++;                      // incrementa el newSize.este sera el nuevo tamanio del array de partes al finalizar el proceso
+                    anual[i] = vacio;               // limpia el anual[i] usado
                 }
             }
         }
         else
         {
-            cout << "Igual\n";
+            //cout << "Igual\n";
         }
-        strcpy(anual[k].nombre, partes[i].nombre);
-        anual[k].mes = partes[i].mes;
-        anual[k].hisopados += partes[i].hisopados;
-        anual[k].infectados += partes[i].infectados;
-        anual[k].recuperados += partes[i].recuperados;
-        anual[k].fallecidos += partes[i].fallecidos;
 
-        key = !(strcmp(partes[i].nombre, partes[i + 1].nombre) == 0);
-        i++;
-    }while(i < counter + 1);
+        // operar, suma los partes al mes correspondiente
+        strcpy(anual[k].nombre, partes[iter].nombre);
+        anual[k].mes = partes[iter].mes;
+        anual[k].hisopados += partes[iter].hisopados;
+        anual[k].infectados += partes[iter].infectados;
+        anual[k].recuperados += partes[iter].recuperados;
+        anual[k].fallecidos += partes[iter].fallecidos;
+
+        key = !(strcmp(partes[iter].nombre, partes[iter + 1].nombre) == 0);
+        iter++;
+    }while(iter < counter + 1);
 
 
+    for(int i = newSize; i < numberPartes; i++) // se encarga de limpiar los partes que sobren
+        partes[i] = vacio;
+    numberPartes = newSize;
 }
