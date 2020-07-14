@@ -27,6 +27,15 @@ struct ParteDiario{
     ushort CantFallecidos;
 };
 
+template<typename T>
+void swap(T& elem1, T& elem2){
+    T temp;
+
+    temp = elem1;
+    elem1 = elem2;
+    elem2 = temp;
+}
+
 template <typename T>
 
 void sortArray(T array[], int length){
@@ -35,9 +44,7 @@ void sortArray(T array[], int length){
         sort = true;
         for (int i = 0; i < length-1; i++){
             if (array[i] > array[i + 1]){
-                T aux = array[i];
-                array[i] = array[i + 1];
-                array[i + 1] = aux;
+                swap(array[i],array[i + 1]);
                 sort = false;
             }
         }
@@ -55,7 +62,7 @@ int binarySearch(int array[], int right, int item){
     }
     return index;
 }
-//NO CAMBIAR!!!
+
 bool readFileCountries(ifstream &fileCountry, Pais &p){
     
     fileCountry.get(p.Nombre, sizeof(p.Nombre));
@@ -73,6 +80,7 @@ bool readFileDailyPart(ifstream &dailyPart, ParteDiario &p){
     dailyPart >> p.CantInfectados;
     dailyPart >> p.CantRecuperados;
     dailyPart >> p.CantFallecidos;
+    dailyPart.ignore();
     return dailyPart.good();
 }
 // int loadArray(Pais array[],Pais pais){
@@ -85,13 +93,14 @@ bool readFileDailyPart(ifstream &dailyPart, ParteDiario &p){
 
 int main(){
     ifstream countries;
-    countries.open(PAISES);
     ifstream report(PART_DIA);
     ofstream exit("exit.txt");
+    countries.open(PAISES);
     Pais tpais;
     while(readFileCountries(countries, tpais)){
         exit << tpais.Nombre;
         exit << tpais.Habitantes << endl;
     }
     countries.close();
+    exit.close();
 }

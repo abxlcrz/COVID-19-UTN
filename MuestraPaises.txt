@@ -1,111 +1,161 @@
-Italia                 1 14	 242827  3432  37290 45679
-Reino Unido            3 23  212000  2378  28320    41
-Brasil                 5 12 1453369  8392 832938   125
-Japon	               2 11   20000   231   2324
-Estados Unidos         6  5 3290000  7382  78272
-Francia                7 24  171000  8372  48392
-Holanda                3 16  140776  4390 492904
-Mexico                 6 13  228598  7392   3289
-España                 2 25  254000  7328   1893
-Rusia                  7 17  727000  5353    285
-Nigeria                1 10   31987  3822    233 
-Corea del Sur          4  4   13417  1278    329
-Surinam                5  3     741    98     82
-China                  1  1   85522  1213    633
-Egipto                 6 22   81158  9326  43245
-Marruecos              3 18   15542  4378  12314
-Chile                  1 21  312000 12389  43146
-Argentina              5  2   97496  7382  54253
-Canada                 3  8  108000  8493  83292
-Jamaica                4 15     758    85    342
-Turkmenistan           7  9    1013   142    234
-Australia              2 27    9797   211    624
-Islandia               6 26    1896  7348    532
---Estados Unidos       1 19
-Canada                 4  8
-Turkmenistan           3  9
-Francia                2 24
-Mexico                 5 13
-Marruecos              7 18
-Brasil                 6 12
-Rusia                  2 17
-Italia                 1 14
-China                  2  1
-Mexico                 5 13	
-Francia                1 24
-Egipto                 1 22
-Holanda                4 16
-China                  3  1
-Brasil                 2 12
-Surinam                5  3
-España                 7 25
-Holanda                4 16
-Francia                2 24
-Italia                 1 14	
-Nigeria                4 10
-Rusia                  1 17
-España                 3 25
-Italia                 5 14
-China                  2  1	
-Corea del Sur          3  4
-Nigeria                7 10
-Mexico                 1 13
-Surinam                4  3
-Rusia                  1 17
-Italia                 2 14	
-Japon	               5 11
-Turkmenistan           4  9
-Reino Unido            3 23
-Marruecos              6 18
-Brasil                 1 12
-Rusia                  7 17
-Mexico                 4 13
-Japon	               5 11
-Egipto                 6 22
-China                  4  1
-Holanda                3 16
-Francia                1 24
-Brasil                 2 12
-Nigeria                5 10
-Rusia                  2 17
-España                 6 25
-Corea del Sur          7  4
-Mexico                 5 13
-Italia                 1 14	
-Reino Unido            2 23
-Nigeria                3 10
-Surinam                1  3
-Holanda                2 16
-Reino Unido            3 23
-Surinam                6  3
-China                  4  1
-Rusia                  1 17
-Brasil                 5 12
-España                 3 25
-Corea del Sur          1  4
-Nigeria                7 10
-Surinam                4  3
-Reino Unido            2 23
-Brasil                 7 12
-Japon	               5 11
-Corea del Sur          7  4
-Japon	               2 11
-Reino Unido            4 23
-Nigeria                1 10
-Surinam                3  3
-Mexico                 1 13
-Italia                 5 14	
-Brasil                 2 12
-Holanda                7 16
-España                 4 25
-China                  5  1
-Corea del Sur          2  4
-Francia                1 24
-Japon	               4 11
-Holanda                5 16
-España                 3 25
-Reino Unido            6 23
-Corea del Sur          4  4
-Nigeria                2 10
-Japon	               3 11
-Francia                1 24
+Italia         1 14 24282  3432 37290 45679
+Reino Unido    3 23 21200  2378 28320    41
+Brasil         5 12 14533  8392 32938   125
+Japon	       2 11 20000   231  2324   674
+Estados Unidos 6  5 32900  7382 28272   784
+Francia        7 24 17100  8372  8392   327
+Holanda        3 16 14776  4390  7904   832
+Mexico         6 13 22598  7392  3289   372
+Espana         2 25 25400  7328  1893  3728
+Rusia          7 17 22700  5353   285   213
+Nigeria        1 10 31987  3822   233  8932
+Corea del Sur  4  4 13417  1278   329   673
+Surinam        5  3   741    98    82   362
+China          1  1 25522  1213   633  1275
+Egipto         6 22 21158  9326 13245  8329
+Marruecos      3 18 15542  4378 12314  5421
+Chile          1 21 31200 12389 23146  6731
+Argentina      5  2 37496  7382 24253  8326
+Canada         3  8 10800  8493  5292  7438
+Jamaica        4 15   758    85   342  3456
+Turkmenistan   7  9  1013   142   234  5632
+Australia      2 27  9797   211   624  1329
+Islandia       6 26  1896  7348   532  1412
+Estados Unidos 6  5 32900  7382 28272   784
+Canada         3  8 10800  8493  5292  7438
+Turkmenistan   7  9  1013   142   234  5632
+Francia        7 24 17100  8372  8392   327
+Mexico         6 13 22598  7392  3289   372
+Argentina      5  2 37496  7382 24253  8326
+Marruecos      3 18 15542  4378 12314  5421
+Brasil         5 12 14533  8392 32938   125
+Jamaica        4 15   758    85   342  3456
+Rusia          7 17 22700  5353   285   213
+Chile          1 21 31200 12389 23146  6731
+Italia         1 14 24282  3432 37290 45679
+China          1  1 25522  1213   633  1275
+Mexico         6 13 22598  7392  3289   372
+Estados Unidos 6  5 32900  7382 28272   784
+Islandia       6 26  1896  7348   532  1412
+Australia      2 27  9797   211   624  1329
+Francia        7 24 17100  8372  8392   327
+Egipto         6 22 21158  9326 13245  8329
+Canada         3  8 10800  8493  5292  7438
+Holanda        3 16 14776  4390  7904   832
+China          1  1 25522  1213   633  1275
+Jamaica        4 15   758    85   342  3456
+Surinam        5  3   741    98    82   362
+Espana         2 25 25400  7328  1893  3728
+Holanda        3 16 14776  4390  7904   832
+Chile          1 21 31200 12389 23146  6731
+Estados Unidos 6  5 32900  7382 28272   784
+Francia        7 24 17100  8372  8392   327
+Italia         1 14 24282  3432 37290 45679
+Rusia          7 17 22700  5353   285   213
+Argentina      5  2 37496  7382 24253  8326
+Espana         2 25 25400  7328  1893  3728
+Italia         1 14 24282  3432 37290 45679
+China          1  1 25522  1213   633  1275
+Corea del Sur  4  4 13417  1278   329   673
+Egipto         6 22 21158  9326 13245  8329
+Nigeria        1 10 31987  3822   233  8932
+Islandia       6 26  1896  7348   532  1412
+Australia      2 27  9797   211   624  1329
+Mexico         6 13 22598  7392  3289   372
+Argentina      5  2 37496  7382 24253  8326
+Canada         3  8 10800  8493  5292  7438
+Surinam        5  3   741    98    82   362
+Rusia          7 17 22700  5353   285   213
+Italia         1 14 24282  3432 37290 45679
+Estados Unidos 6  5 32900  7382 28272   784
+Japon	       2 11 20000   231  2324   674
+Turkmenistan   7  9  1013   142   234  5632
+Reino Unido    3 23 21200  2378 28320    41
+Australia      2 27  9797   211    24  1329
+Marruecos      3 18 15542  4378 12314  5421
+Brasil         5 12 14533  8392 32938   125
+Jamaica        4 15   758    85   342  3456
+Rusia          7 17 22700  5353   285   213
+Mexico         6 13 22598  7392  3289   372
+Islandia       6 26  1896  7348   532  1412
+Japon	       2 11 20000   231  2324   674
+Argentina      5  2 37496  7382 24253  8326
+Egipto         6 22 21158  9326 13245  8329
+Turkmenistan   7  9  1013   142   234  5632
+China          1  1 25522  1213   633  1275
+Australia      2 27  9797   211   624  1329
+Holanda        3 16 14776  4390  7904   832
+Chile          1 21 31200 12389 23146  6731
+Francia        7 24 17100  8372  8392   327
+Brasil         5 12 14533  8392 32938   125
+Nigeria        1 10 31987  3822   233  8932
+Rusia          7 17 22700  5353   285   213
+Espana         2 25 25400  7328  1893  3728
+Corea del Sur  4  4 13417  1278   329   673
+Canada         3  8 10800  8493  5292  7438
+Argentina      5  2 37496  7382 24253  8326
+Marruecos      3 18 15542  4378 12314  5421
+Islandia       6 26  1896  7348   532  1412
+Chile          1 21 31200 12389 23146  6731
+Mexico         6 13 22598  7392  3289   372
+Italia         1 14 24282  3432 37290 45679
+Reino Unido    3 23 21200  2378 28320    41
+Nigeria        1 10 31987  3822   233  8932
+Surinam        5  3   741    98    82   362
+Estados Unidos 6  5 32900  7382 28272   784
+Holanda        3 16 14776  4390  7904   832
+Reino Unido    3 23 21200  2378 28320    41
+Turkmenistan   7  9  1013   142   234  5632
+Jamaica        4 15   758    85   342  3456
+Surinam        5  3   741    98    82   362
+China          1  1 25522  1213   633  1275
+Marruecos      3 18 15542  4378 12314  5421
+Rusia          7 17 22700  5353   285   213
+Brasil         5 12 14533  8392 32938   125
+Espana         2 25 25400  7328  1893  3728
+Australia      2 27  9797   211   624  1329
+Canada         3  8 10800  8493  5292  7438
+Corea del Sur  4  4 13417  1278   329   673
+Egipto         6 22 21158  9326 13245  8329
+Nigeria        1 10 31987  3822   233  8932
+Surinam        5  3   741    98    82   362
+Reino Unido    3 23 21200  2378 28320    41
+Brasil         5 12 14533  8392 32938   125
+Argentina      5  2 37496  7382 24253  8326
+Chile          1 21 31200 12389 23146  6731
+Japon	       2 11 20000   231  2324   674
+Corea del Sur  4  4 13417  1278   329   673
+Japon	       2 11 20000   231  2324   674
+Reino Unido    3 23 21200  2378 28320    41
+Islandia       6 26  1896  7348   532  1412
+Nigeria        1 10 31987  3822   233  8932
+Estados Unidos 6  5 32900  7382 28272   784
+Surinam        5  3   741    98    82   362
+Marruecos      3 18 15542  4378 12314  5421
+Turkmenistan   7  9  1013   142   234  5632
+Mexico         6 13 22598  7392  3289   372
+Italia         1 14 24282  3432 37290 45679
+Brasil         5 12 14533  8392 32938   125
+Holanda        3 16 14776  4390  7904   832
+Australia      2 27  9797   211   624  1329
+Espana         2 25 25400  7328  1893  3728
+Egipto         6 22 21158  9326 13245  8329
+China          1  1 25522  1213   633  1275
+Corea del Sur  4  4 13417  1278   329   673
+Francia        7 24 17100  8372  8392   327
+Jamaica        4 15   758    85   342  3456
+Japon          2 11 20000   231  2324   674
+Chile          1 21 31200 12389 23146  6731
+Holanda        3 16 14776  4390  7904   832
+Canada         3  8 10800  8493  5292  7438
+Marruecos      3 18 15542  4378 12314  5421
+Islandia       6 26  1896  7348   532  1412
+Turkmenistan   7  9  1013   142   234  5632
+Egipto         6 22 21158  9326 13245  8329
+Espana         2 25 25400  7328  1893  3728
+Reino Unido    3 23 21200  2378 28320    41
+Corea del Sur  4  4 13417  1278   329   673
+Nigeria        1 10 31987  3822   233  8932
+Jamaica        4 15   758    85   342  3456
+Japon	       2 11 20000   231  2324   674
+Francia        7 24 17100  8372  8392   327
