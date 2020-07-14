@@ -83,6 +83,7 @@ bool readFileDailyPart(ifstream &dailyPart, ParteDiario &p){
     dailyPart.ignore();
     return dailyPart.good();
 }
+
 // int loadArray(Pais array[],Pais pais){
 //     static int i=0;
 //     array[i].Nombre=pais.Nombre;
