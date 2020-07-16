@@ -1,4 +1,4 @@
-bool LeerParteDiario(PARTE& temp)
+bool LeerParteDiario(tsParDia& temp)
 {
     assert(file.is_open());
 
@@ -18,7 +18,7 @@ bool LeerParteDiario(PARTE& temp)
 void ProcesarParte()
 {
     ushort counter = 0;
-    PARTE temp;
+    tsParDia temp;
 
     while(LeerParteDiario(temp))
     {
@@ -27,8 +27,8 @@ void ProcesarParte()
     };
     numberPartes = counter;
 
-    PARTE vacio = { "", 0, 0, 0, 0, 0 };
-    PARTE anual[12];
+    tsParDia vacio = { "", 0, 0, 0, 0, 0 };
+    tsParDia anual[12];
     ushort iter = 0;
     ushort newSize = 0;
     ushort k;
