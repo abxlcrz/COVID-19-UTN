@@ -3,13 +3,13 @@ using namespace std;
 typedef unsigned int uint;
 typedef unsigned short ushort;
 
-struct PAIS
+struct tsPais
 {
     char nombre[21];
     uint habitantes;
 };
 
-struct PARTE
+struct tsParDia
 {
     char nombre[21];
     ushort mes;
@@ -27,8 +27,8 @@ enum PARAM
     FALLECIDOS
 };
 
-PAIS paises[MAX_PAISES];
-PARTE partes[MAX_PAISES * 12];
+tsPais paises[MAX_PAISES];
+tsParDia partes[MAX_PAISES * 12];
 fstream file;
 ushort numberPaises = 0;
 ushort numberPartes = 0;
