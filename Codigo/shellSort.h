@@ -1,6 +1,6 @@
 void Shellsort(PARAM param, int size)
 {
-    PARTE temp;
+    tsParDia temp;
     int i = 0;
     int k = 0;
     int seq = 1;
