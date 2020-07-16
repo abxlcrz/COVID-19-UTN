@@ -1,4 +1,4 @@
-bool LeerPaises(PAIS& pais)
+bool LeerPaises(tsPais& pais)
 {
 
 
@@ -17,7 +17,7 @@ bool LeerPaises(PAIS& pais)
 void ProcesarPaises()   // funcion incompleta
 {
     ushort counter = 0;
-    PAIS temp;
+    tsPais temp;
 
 
     while(LeerPaises(temp))
