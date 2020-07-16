@@ -76,6 +76,7 @@ bool readFileDailyPart(ifstream &dailyPart, ParteDiario &p){
     
     dailyPart.get(p.Nombre, sizeof(p.Nombre));
     dailyPart >> p.Mes;
+    dailyPart.ignore(2);
     dailyPart >> p.CantHisopados;
     dailyPart >> p.CantInfectados;
     dailyPart >> p.CantRecuperados;
