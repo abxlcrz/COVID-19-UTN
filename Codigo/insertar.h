@@ -1,19 +1,17 @@
+
+
 template<typename T>
-void InsertarEnOrden(T& temp, int size, T array[])  // sirve tanto para Paises como para Parte, solo ordena por nombre
+void InsertarEnOrden(T& temp, int size, T array[])
 {
-    int i = 0;
-
-    for(; i < size; i++)
+    while(size > 0 && strcmp(temp.nombre, array[size - 1].nombre) < 0)
     {
-        if(strcmp(temp.nombre, array[i].nombre) < 0)
-            break;
-    }
-    int k = size;
+      Intercambiar(array[size - 1], array[size]);
+      size--;
+    };
 
-    for(; i < k; k--)
-    {
-        Intercambiar(array[k], array[k - 1]);
-    }
-
-    array[i] = temp;
+    array[size] = temp;
 }
+
+
+
+

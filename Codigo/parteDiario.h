@@ -1,8 +1,8 @@
-bool LeerParteDiario(tsParDia& temp)
+bool LeerParteDiario(PARTE& temp)
 {
     assert(file.is_open());
 
-    file.get(temp.nombre, 11);
+    file.get(temp.nombre, 15);
     file >> temp.mes;
     file.ignore(3);
     file >> temp.hisopados;
@@ -17,77 +17,51 @@ bool LeerParteDiario(tsParDia& temp)
 
 void ProcesarParte()
 {
-    ushort counter = 0;
-    tsParDia temp;
+    ushort counter = 0;     // contador  para almacenar la cantidad de partes que se cargan al array de ParteDiario
+    PARTE temp;             // estructura de tipo PARTE temporal, utilizada para almacenar los datos de los partes temporalmente
 
     while(LeerParteDiario(temp))
     {
         InsertarEnOrden(temp, counter, partes);
         counter++;
     };
-    numberPartes = counter;
+    numberPartes = counter;     // se asignan counter a la variable global numberPartes, que almacena el numero de partes ( es prescindible )
 
-    tsParDia vacio = { "", 0, 0, 0, 0, 0 };
-    tsParDia anual[12];
+
     ushort iter = 0;
     ushort newSize = 0;
     ushort k;
     bool key = false;
 
-    for(ushort i = 0; i < 12; i++)
-        anual[i] = vacio;
 
-    do
+
+    do      // por lo menos se ejecuta una vez este codigo,
     {
         k = partes[iter].mes;
 
-        if(key)
+        if(key)     // el parte que esta por ser procesado corresponde un pais distinto a los que ya se procesaron
         {
-            //cout << "Diferente\n";
-            //cout << "Imprimir datos actuales:\n";
-            /*
-            for(int i = newSize; i < i; i++)
-            {
-                partes[i] = vacio;
-            }
-            */
-            for(ushort i = 0; i < 12; i++)
-            {
-                if(anual[i].mes != 0)               // utilizar solo anuales no vacios
-                {
-                    /*
-                    cout << "Nombre de pais: " << anual[i].nombre << "\n";
-                    cout << "Mes: " << anual[i].mes << "\n";
-                    cout << "Hisopados: " << anual[i].hisopados << "\n";
-                    cout << "Infectados: " << anual[i].infectados << "\n";
-                    cout << "Recuperados: " << anual[i].recuperados << "\n";
-                    cout << "Fallecidos: " << anual[i].fallecidos << "\n\n";
-                    */
-                    partes[newSize] = anual[i];     // remplaza el partes[newSize] por el anual[i]
-                    newSize++;                      // incrementa el newSize.este sera el nuevo tamanio del array de partes al finalizar el proceso
-                    anual[i] = vacio;               // limpia el anual[i] usado
-                }
-            }
+            strcpy(parteProcesados[newSize].nombre, partes[iter - 1].nombre);   // asignar el nombre del pais de los partes ya procesados
+            newSize++;      // aumentar el newSize en 1, para poder almacenar los partes en el siguiente espacio de array
         }
         else
         {
-            //cout << "Igual\n";
+            // no hacer nada
         }
+        parteProcesados[newSize].mes[k-1] = k;      // asignar mes
 
-        // operar, suma los partes al mes correspondiente
-        strcpy(anual[k].nombre, partes[iter].nombre);
-        anual[k].mes = partes[iter].mes;
-        anual[k].hisopados += partes[iter].hisopados;
-        anual[k].infectados += partes[iter].infectados;
-        anual[k].recuperados += partes[iter].recuperados;
-        anual[k].fallecidos += partes[iter].fallecidos;
+        // si comparten el mismo mes se suman
+        // newSize identifica la posicion dentro del array ParteDiarioProcesados o ParteDiarioAlmacenados
+        // k       identifica el mes asignado al ParteDiario procesado
+        // k - 1   identifica la posicion dentro de las variables array de la estructura ParteDiarioProcesados o ParteDiarioAlmacenados
+        // iter    identifica la posicion dentro del array de ParteDiario, es la posicion del parteDiario que se esta procesando
+        parteProcesados[newSize].hisopados[k-1] += partes[iter].hisopados;
+        parteProcesados[newSize].infectados[k-1] += partes[iter].infectados;
+        parteProcesados[newSize].recuperados[k-1] += partes[iter].recuperados;
+        parteProcesados[newSize].fallecidos[k-1] += partes[iter].fallecidos;
 
-        key = !(strcmp(partes[iter].nombre, partes[iter + 1].nombre) == 0);
+
+        key = !(strcmp(partes[iter].nombre, partes[iter + 1].nombre) == 0);     // si esto evalua a verdadero, el parte siguiente corresponde a un pais diferente
         iter++;
     }while(iter < counter + 1);
-
-
-    for(int i = newSize; i < numberPartes; i++) // se encarga de limpiar los partes que sobren
-        partes[i] = vacio;
-    numberPartes = newSize;
 }
