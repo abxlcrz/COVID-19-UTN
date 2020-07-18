@@ -22,16 +22,17 @@ struct PARTE
 struct PARTE_PROCESADO
 {
     char nombre[20];
+    uint habitantes;
     ushort mes[12];
-    int hisopados[12];
-    int infectados[12];
-    int recuperados[12];
-    int fallecidos[12];
+    int hisopados[13];
+    int infectados[13];
+    int recuperados[13];
+    int fallecidos[13];
 };
 
 enum PARAM
 {
-    HISOPADOS,
+    HISOPADOS = 0,
     INFECTADOS,
     RECUPERADOS,
     FALLECIDOS

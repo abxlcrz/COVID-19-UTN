@@ -3,16 +3,18 @@
 #include <cstring.h>
 #include <cassert.h>
 #include <sstream.h>
+#include <iomanip.h>
 
 
 #include "encabezados.h"
 #include "intercambiar.h"
 #include "insertar.h"
 #include "shellSort.h"
+//#include "bubbleSort.h"
 #include "archivos.h"
 #include "paises.h"
 #include "parteDiario.h"
-
+#include "listado.h"
 
 
 void ImprimirPaises(PAIS p[])
@@ -41,6 +43,7 @@ void ImprimirPartesProcesados(PARTE_PROCESADO p[])
         {
             cout << "Datos del mes: " << j+1 << "\n";
             cout << "Cantidad de hisopados: " << p[i].hisopados[j] << "\n";
+            cout << "Total: " << p[i].hisopados[12] << "\n";
             cout << "Cantidad de infectados: " << p[i].infectados[j] << "\n";
             cout << "Cantidad de recuperados: " << p[i].recuperados[j] << "\n";
             cout << "Cantidad de fallecidos: " << p[i].fallecidos[j] << "\n\n";
@@ -61,12 +64,26 @@ int main()
 	CerrarArchivo(file);
 
 
+    Listado();
 
-    ImprimirPartes(partes);
+    int param = 0;
+    int* ptr = (&(parteProcesados[0].hisopados[12])) + param * 13;
+    int* ptr1;
+    /*
+    cout << *ptr << "\n";
+    cout << *(ptr + 13) << "\n";
+    */
 
-    cout << "\n\n";
+    for(int i = 0; i < 10; i++)
+    {
+        ptr1 = parteProcesados[i].hisopados + 13;
 
-    ImprimirPartesProcesados(parteProcesados);
+        for(int j = 0; j < 13; j++)
+        {
+            cout << (ptr1)[j] << "\n";
 
+        }
+        cout << "END\n\n";
+    }
  	return 0;
 }

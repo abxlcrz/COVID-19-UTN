@@ -42,6 +42,7 @@ void ProcesarParte()
         if(key)     // el parte que esta por ser procesado corresponde un pais distinto a los que ya se procesaron
         {
             strcpy(parteProcesados[newSize].nombre, partes[iter - 1].nombre);   // asignar el nombre del pais de los partes ya procesados
+            parteProcesados[newSize].habitantes = paises[newSize].habitantes;
             newSize++;      // aumentar el newSize en 1, para poder almacenar los partes en el siguiente espacio de array
         }
         else
@@ -56,10 +57,16 @@ void ProcesarParte()
         // k - 1   identifica la posicion dentro de las variables array de la estructura ParteDiarioProcesados o ParteDiarioAlmacenados
         // iter    identifica la posicion dentro del array de ParteDiario, es la posicion del parteDiario que se esta procesando
         parteProcesados[newSize].hisopados[k-1] += partes[iter].hisopados;
-        parteProcesados[newSize].infectados[k-1] += partes[iter].infectados;
-        parteProcesados[newSize].recuperados[k-1] += partes[iter].recuperados;
-        parteProcesados[newSize].fallecidos[k-1] += partes[iter].fallecidos;
+        parteProcesados[newSize].hisopados[12] += partes[iter].hisopados;
 
+        parteProcesados[newSize].infectados[k-1] += partes[iter].infectados;
+        parteProcesados[newSize].infectados[12] += partes[iter].infectados;
+
+        parteProcesados[newSize].recuperados[k-1] += partes[iter].recuperados;
+        parteProcesados[newSize].recuperados[12] += partes[iter].recuperados;
+
+        parteProcesados[newSize].fallecidos[k-1] += partes[iter].fallecidos;
+        parteProcesados[newSize].fallecidos[12] += partes[iter].fallecidos;
 
         key = !(strcmp(partes[iter].nombre, partes[iter + 1].nombre) == 0);     // si esto evalua a verdadero, el parte siguiente corresponde a un pais diferente
         iter++;
