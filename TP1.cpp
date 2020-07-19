@@ -18,6 +18,8 @@ struct Pais{
     uint Habitantes;
 };
 
+
+
 struct ParteDiario{
     str20 Nombre;
     ushort Mes;
@@ -25,6 +27,15 @@ struct ParteDiario{
     ushort CantInfectados;
     ushort CantRecuperados;
     ushort CantFallecidos;
+};
+
+struct ParteDiarioAlmacenado{
+    str20 Nombre;
+    uint Mes[12];
+    uint CantHisopados[12];
+    uint CantInfectados[12];
+    uint CantRecuperados[12];
+    uint CantFallecidos[12];
 };
 
 template<typename T>
