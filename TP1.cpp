@@ -48,18 +48,28 @@ void swap(T& elem1, T& elem2){
 }
 
 template <typename T>
+void quickSort(T array[],int left, int right){
+        int i,j,pivot;
 
-void sortArray(T array[], int length){
-    bool sort = false;
-    while (!sort){
-        sort = true;
-        for (int i = 0; i < length-1; i++){
-            if (array[i] > array[i + 1]){
-                swap(array[i],array[i + 1]);
-                sort = false;
+        if(left<right){
+            pivot=left;
+            i=left;
+            j=right;
+
+            while(i<j){
+                while(array[i]<=array[pivot] && i<right) i++;
+
+                while(array[j]>array[pivot]) j--;
+
+                if(i<j) swapString(array[i],array[j]);
             }
+
+            swapString(array[pivot],array[j]);
+            quickSort(array,left,j-1);
+            quickSort(array,j+1,right);
+
+
         }
-    }
 }
 
 int binarySearch(int array[], int right, int item){
@@ -72,6 +82,14 @@ int binarySearch(int array[], int right, int item){
         else right = mid - 1;
     }
     return index;
+}
+
+void insertionSort(Pais array[], Pais value, int i){
+    while(i>0 && value.Nombre < array[i-1].Nombre){
+        array[i]=array[i-1];
+        i=i-1; //i--
+    }
+    array[i]=value;
 }
 
 bool readFileCountries(ifstream &fileCountry, Pais &p){
