@@ -87,7 +87,7 @@ short binarySearch(Pais array[], short right, str20 item){
 uint* setHisopados( ParteDiarioAlmacenado p){
         static uint x[8];
     for(short i=0;i<=7;i++)
-        x[i]=p.CantInfectados[i];
+        x[i]=p.CantHisopados[i];
     return x;
 }
 
@@ -101,14 +101,14 @@ uint* setInfectados( ParteDiarioAlmacenado p){
 uint* setFallecidos( ParteDiarioAlmacenado p){
     static uint x[8];
     for(short i=0;i<=7;i++)
-        x[i]=p.CantInfectados[i];
+        x[i]=p.CantFallecidos[i];
     return x;
 }
 
 uint* setRecuperados( ParteDiarioAlmacenado p){
     static uint x[8];
     for(short i=0;i<=7;i++)
-        x[i]=p.CantInfectados[i];
+        x[i]=p.CantRecuperados[i];
     return x;
 }
 
@@ -219,8 +219,8 @@ void writeFile(ParteDiarioAlmacenado array[],Pais paises[],uint* param(ParteDiar
     exit<<"Listado de "<<type;
     exit<<formatFile('=',48)<<endl;
     exit<<formatFile('=',117)<<endl;
-    exit<<" Nro. Nom "<<formatFile(' ',16)<<" Cant. Hab.  "<<formatFile('=',11)<<"Cantidades de "<<type<<" por mes"<<formatFile('=',11)<<"     Cant.  Porcentaje"<<endl;
-    exit<<" Ord. Pais"<<formatFile(' ',30) <<"Enero  Febrero   Marzo   Abril   Mayo   Junio   Julio      Total"<<endl;
+    exit<<" Nro. Nom "<<formatFile(' ',16)<<" Cant. Hab. "<<formatFile('=',17)<<"Cantidades de "<<type<<" por mes"<<formatFile('=',17)<<"     Cant.  Porcentaje"<<endl;
+    exit<<" Ord. Pais"<<formatFile(' ',30) <<"Enero  Febrero     Marzo     Abril      Mayo     Junio     Julio     Total"<<endl;
     uint acumHab=0,acumParam=0;
     for (short i = 0; i < 10; i++){
         exit<<setw(2)<<i+1<<"    ";
@@ -228,11 +228,11 @@ void writeFile(ParteDiarioAlmacenado array[],Pais paises[],uint* param(ParteDiar
         short index=binarySearch(paises,len,array[i].Nombre); 
         exit<<right<<setw(10)<<paises[index].Habitantes<<" ";
         acumHab+=paises[index].Habitantes;
-        for (short j = 0; j <7; j++){
+        for (short j = 0; j <=7; j++){
             exit<<right<<setw(6)<<param(array[i])[j]<<"    ";
             acumParam+=param(array[i])[j];
         }
-        exit<<right<<setw(4)<<"%"<<setprecision(2)<<(float)(100*param(array[i])[7])/paises[index].Habitantes<<' '<<endl;
+        exit<<right<<setw(4)<<setprecision(2)<<(float)(100*param(array[i])[7])/paises[index].Habitantes<<endl;
     }
     exit<<endl;
     exit<<"Cantidad total de "<<setw(11)<<type <<"a la fecha actual: "<<acumParam<<endl;

@@ -1,18 +1,18 @@
 =====================================================================================================================
 ================================================Listado de Fallecidos================================================
 =====================================================================================================================
- Nro. Nom                  Cant. Hab.  ===========Cantidades de Fallecidos por mes===========     Cant.  Porcentaje
- Ord. Pais                              Enero  Febrero   Marzo   Abril   Mayo   Junio   Julio      Total
- 1    Chile                  18700000 185835         0         0         0         0         0         0       %0.99 
- 2    Egipto                 98400000      0         0         0         0         0    139890         0       %0.14 
- 3    Canada                 37000000      0         0    127395         0         0         0         0       %0.34 
- 4    Brasil                209500000  16784      8392     16784     16784     25176     25176     16784       %0.06 
- 5    Francia                66500000      0         0         0         0         0         0    125580       %0.19 
- 6    Mexico                126000000      0         0         0         0         0    110880         0       %0.088 
- 7    Argentina              44490000      0         0         0         0    110730         0         0       %0.25 
- 8    Estados Unidos        328200000      0         0         0         0         0    110730         0       %0.034 
- 9    Islandia                 364134      0         0         0         0         0    110220         0       %30 
-10    Espana                 46900000      0    109920         0         0         0         0         0       %0.23 
+ Nro. Nom                  Cant. Hab. =================Cantidades de Fallecidos por mes=================     Cant.  Porcentaje
+ Ord. Pais                              Enero  Febrero     Marzo     Abril      Mayo     Junio     Julio     Total
+ 1    Italia                 60360000 137037    137037    137037    137037    137037     91358     91358    867901     1.4
+ 2    Nigeria               195900000 133980         0         0         0         0         0         0    133980    0.068
+ 3    Egipto                 98400000      0         0         0         0         0    124935         0    124935    0.13
+ 4    Argentina              44490000      0         0         0         0    124890         0         0    124890    0.28
+ 5    Canada                 37000000      0         0    111570         0         0         0         0    111570     0.3
+ 6    Chile                  18700000 100965         0         0         0         0         0         0    100965    0.54
+ 7    Turkmenistan            5850000      0         0         0         0         0         0     84480     84480     1.4
+ 8    Marruecos              36000000      0         0     81315         0         0         0         0     81315    0.23
+ 9    Espana                 46900000      0     55920         0         0         0         0         0     55920    0.12
+10    Jamaica                 2900000      0         0         0     51840         0         0         0     51840     1.8
 
-Cantidad total de  Fallecidosa la fecha actual: 1257060
-Porcentaje de  Fallecidos: %0.13
+Cantidad total de  Fallecidosa la fecha actual: 3475592
+Porcentaje de  Fallecidos: %0.64
