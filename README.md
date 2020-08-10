@@ -116,11 +116,11 @@ Se deben utilizar constantes con nombres para indicar estas cantidades.
 
 La muestra de datos para Paises.Txt no debe ser menor a veinte (20) paises, además debe registrarse por cada renglón los datos de un país, sin títulos, solo debe tener los datos, items indicados en la sección de archivos. 
 
-=================================   Documentación   =================================
+##=============================   Documentación   =============================
 En éste archivo se mostraran los detalles sobre el desarrollo de la solución del tp 
 covid-19.
 
-=================================   Problematica    =================================
+## Problematica
 
 Basicamente el problema consiste en  calcular la cantidad de infectados en base a una 
 serie de datos,dichos datos  están en 2 archivos de texto. Estos ficheros están cargados 
@@ -138,7 +138,7 @@ cada top.
 Damos por sentado que al tratar con datos mayores, tenemos que ordenarlos de forma 
 descendente.
 
-===================================   Algoritmo   ===================================
+## Algoritmo
 
 Para el desarrollo del algoritmo se eligó como estrategia los siguientes procedimientos:
 
@@ -156,8 +156,7 @@ sortArray() =>Posee  un algoritmo de ordenamiento, quick sort, trabaja con  un a
 
 
 
-
-===================================   Funciones   ===================================
+##  Funciones
 
 ========Primer etapa========
 
@@ -193,7 +192,7 @@ Entendemos que se tienen que crear 4 archivos para cada parametro.
         writeFiles()
         closeFiles()
 
-===================================   Structs   ===================================
+## Structs 
 
 la primer estructura está definida por los siguientes identificadores y campos:
 ```cpp
@@ -230,16 +229,15 @@ struct PartDiarioProcesado{
         uint  CantFallecidos[8];     //32 bytes
 } 163 bytes por cada instancia
 ```
-====================================================================
-==============================ATENCION==============================
-====================================================================
+
+ ============================== ATENCION ==============================
+
 Hay que arreglar el formato, estoy con arquitectura asi que lo arreglo más tarde ahre
 no se alinean los floats como quiero, debe ser una boludez 
 
 
-=====================================================================
-==============================Templates==============================
-=====================================================================
+ ## Templates
+
 
 Un template es una funcion generica, es decir, puede trabajar con cualquier tipo de dato.
 De esta forma nos ahorramos codigo trivial, que tiene una meta en comun con otras 
@@ -280,7 +278,7 @@ template <typename T,typename K> void quickSort(T array[],K setParam(T),short le
 
 ```
 
-===================================   Complejidad temporal   ===================================
+## Complejidad temporal  
 
 Como se sabe, un buena solucion además de tener legibilidad tiene que ser eficiente y eficaz.
 En esta solución se trató de ahorrar espacio en memoria para poder procesar los datos.
@@ -300,12 +298,12 @@ Por ej: si tenemos un array de 200 elementos y aplicamos bubble sort nuestro tie
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-====================logaritmica====================   
+## logaritmica  
 quickSort=> Tiene un coste de tiempo O(log n), esto quiere decir que a medida que la entrada sea de 
             mayor tamaño aumentaran las comparaciones e intercambios, pero de una manera logaritmica.
 
-====================Cuadratica====================
+## Cuadratica
 
 insertionSort=>Posee un coste temporal de O(n^2), en otras palabras a medida que tengamos una entrada
-                de mayor tamaño, aumentarán las comparaciones e intercambios a realizar en funcion de n.
-Lo mismo aplica para las funciones writeFile y almacenarParteDiario
+               de mayor tamaño, aumentarán las comparaciones e intercambios a realizar en funcion de n.
+               Lo mismo aplica para las funciones writeFile() y almacenarParteDiario()
