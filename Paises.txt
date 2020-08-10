@@ -1,12 +1,12 @@
 Italia               Europa       60360000
 Reino Unido          Europa       66650000
 Brasil               America     209500000
-Japon	             Asia        126000000
+Japon                Asia        126000000
 Estados Unidos       America     328200000
 Francia              Europa       66500000
 Holanda              Europa       17000000
 Mexico               America     126000000
-España               Europa       46900000
+Espana               Europa       46900000
 Rusia                Europa      144500000
 Nigeria              Africa      195900000
 Corea del Sur        Asia         51600000
