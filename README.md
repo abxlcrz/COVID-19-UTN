@@ -196,7 +196,7 @@ Entendemos que se tienen que crear 4 archivos para cada parametro.
 ===================================   Structs   ===================================
 
 la primer estructura está definida por los siguientes identificadores y campos:
-
+```cpp
 struct Pais {
         str20 Nombre;       //21 bytes
         uint  habitantes;   //4 bytes
@@ -204,12 +204,12 @@ struct Pais {
 
 siendo un total de 25 bytes por estructura.
 un array de tipo pais contendrá 5000 bytes = 25*200 elementos.
-
+```
 
 La segunda, que hace referencia al parte diario se conforma de la siguiente manera:
 ushort => val max es de 65535
 
-
+```cpp
 struct ParteDiario {
         str20   Nombre;             //21 bytes
         ushort  Mes;                //4 bytes
@@ -219,7 +219,8 @@ struct ParteDiario {
         ushort  CantFallecidos;     //4 bytes                        
 };
 41 bytes para la 2da estructura
-
+```
+```cpp
 struct PartDiarioProcesado{
         str20   Nombre;              //21 bytes
         ushort  Mes[7];              //14 bytes
@@ -228,7 +229,7 @@ struct PartDiarioProcesado{
         uint  CantRecuperados[8];    //32 bytes
         uint  CantFallecidos[8];     //32 bytes
 } 163 bytes por cada instancia
-
+```
 ====================================================================
 ==============================ATENCION==============================
 ====================================================================
@@ -246,15 +247,17 @@ funciones, solamente difieren del tipo.Podemos decir que recibimos como parametr
 de dato de los argumentos que recibimos,ésto nos da la posibilidad de tener un código reutilizable.
 
 Esta función recibe como parametros 2 variables de tipo T, solamente se encarga de intercambiar los valores de los mismos.
+```cpp
 template <typename T> void swapValues(T &x, T&y){
     T aux=x;
     x=y;
     y=aux;
 }
+```
 
 Ejemplo de una función de ordenamiento implementando el algoritmo quicksort, recibe como parametro
 un array de tipo T, una función que retorna un tipo K y recibe como parametro un tipo T.
-
+```cpp
 template <typename T,typename K> void quickSort(T array[],K setParam(T),short left,short right){
     short i,j,pivot;
     if(left<right){
@@ -275,7 +278,7 @@ template <typename T,typename K> void quickSort(T array[],K setParam(T),short le
     }
 }}
 
-
+```
 
 ===================================   Complejidad temporal   ===================================
 
